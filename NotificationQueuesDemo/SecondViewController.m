@@ -98,7 +98,7 @@ static NSString *const kNotificationName2 = @"name2";
     
     dispatch_async(queue, ^{
         // 追加任务1
-        for (int i = 0; i < 2; ++i) {
+        for (int i = 0; i < 3; ++i) {
 
             NSLog(@"\n %@ 发出 通知1 数据 ----- %@ ",pushMethod, [NSThread currentThread]);
             [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationName1
@@ -110,7 +110,7 @@ static NSString *const kNotificationName2 = @"name2";
     
     dispatch_async(queue, ^{
         
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             
             NSLog(@"\n %@ 发出 通知2 数据 ----- %@ ",pushMethod, [NSThread currentThread]);
             [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationName2

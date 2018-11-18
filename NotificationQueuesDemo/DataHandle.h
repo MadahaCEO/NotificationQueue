@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+
+@protocol DataHandleDelegate<NSObject>
+
+- (void)dataComplete:(NSArray *)array type:(int)type;
+
+@end
+
+
+
 @interface DataHandle : NSObject
+
+@property (nonatomic, weak) id <DataHandleDelegate>delegate;
+
+- (void)simulateDataHandle:(NSArray *)array type:(int)type;
 
 @end

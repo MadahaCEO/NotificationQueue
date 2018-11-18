@@ -11,7 +11,7 @@
 
 @protocol NotificationDelegate<NSObject>
 
-- (void)pushData:(NSArray *)array;
+- (void)pushData:(NSArray *)array type:(int)type;
 
 @end
 

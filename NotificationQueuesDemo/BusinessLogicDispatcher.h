@@ -1,5 +1,5 @@
 //
-//  Database.h
+//  BusinessLogicDispatcher.h
 //  NotificationQueuesDemo
 //
 //  Created by Apple on 2018/11/18.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Database : NSObject
+@interface BusinessLogicDispatcher : NSObject
 
 @end

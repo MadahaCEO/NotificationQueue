@@ -17,8 +17,8 @@
 		18F5819D2197CE62008140AA /* NotificationQueuesDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F5819C2197CE62008140AA /* NotificationQueuesDemoUITests.m */; };
 		18F581AC21A1047E008140AA /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F581AB21A1047E008140AA /* Notification.m */; };
 		18F581AF21A10490008140AA /* DataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F581AE21A10490008140AA /* DataHandle.m */; };
-		18F581B221A1049B008140AA /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F581B121A1049B008140AA /* Database.m */; };
 		18F581B521A104B7008140AA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F581B421A104B7008140AA /* SecondViewController.m */; };
+		18F581B821A15D0C008140AA /* BusinessLogicDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F581B721A15D0C008140AA /* BusinessLogicDispatcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +59,10 @@
 		18F581AB21A1047E008140AA /* Notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
 		18F581AD21A10490008140AA /* DataHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataHandle.h; sourceTree = "<group>"; };
 		18F581AE21A10490008140AA /* DataHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHandle.m; sourceTree = "<group>"; };
-		18F581B021A1049B008140AA /* Database.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
-		18F581B121A1049B008140AA /* Database.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Database.m; sourceTree = "<group>"; };
 		18F581B321A104B7008140AA /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		18F581B421A104B7008140AA /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		18F581B621A15D0C008140AA /* BusinessLogicDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BusinessLogicDispatcher.h; sourceTree = "<group>"; };
+		18F581B721A15D0C008140AA /* BusinessLogicDispatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessLogicDispatcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,14 +117,14 @@
 				18F581792197CE62008140AA /* AppDelegate.m */,
 				18F5817B2197CE62008140AA /* ViewController.h */,
 				18F5817C2197CE62008140AA /* ViewController.m */,
+				18F581B621A15D0C008140AA /* BusinessLogicDispatcher.h */,
+				18F581B721A15D0C008140AA /* BusinessLogicDispatcher.m */,
 				18F581B321A104B7008140AA /* SecondViewController.h */,
 				18F581B421A104B7008140AA /* SecondViewController.m */,
 				18F581AA21A1047E008140AA /* Notification.h */,
 				18F581AB21A1047E008140AA /* Notification.m */,
 				18F581AD21A10490008140AA /* DataHandle.h */,
 				18F581AE21A10490008140AA /* DataHandle.m */,
-				18F581B021A1049B008140AA /* Database.h */,
-				18F581B121A1049B008140AA /* Database.m */,
 				18F5817E2197CE62008140AA /* Main.storyboard */,
 				18F581812197CE62008140AA /* Assets.xcassets */,
 				18F581832197CE62008140AA /* LaunchScreen.storyboard */,
@@ -289,8 +289,8 @@
 				18F5817D2197CE62008140AA /* ViewController.m in Sources */,
 				18F581882197CE62008140AA /* main.m in Sources */,
 				18F581B521A104B7008140AA /* SecondViewController.m in Sources */,
+				18F581B821A15D0C008140AA /* BusinessLogicDispatcher.m in Sources */,
 				18F581AF21A10490008140AA /* DataHandle.m in Sources */,
-				18F581B221A1049B008140AA /* Database.m in Sources */,
 				18F5817A2197CE62008140AA /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

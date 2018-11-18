@@ -24,59 +24,9 @@
     // Override point for customization after application launch.
     
     
-    array = [NSMutableArray arrayWithCapacity:0];
-    
-    taskQueue = dispatch_queue_create("com.no.test11", DISPATCH_QUEUE_SERIAL);
-
-    
-    __weak typeof(self)weakSelf = self;
-
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
-        [[NSNotificationCenter defaultCenter] addObserverForName:@"test"
-                                                          object:nil
-                                                           queue:[NSOperationQueue currentQueue]
-                                                      usingBlock:^(NSNotification * _Nonnull note) {
-                                                          
-                                                          [weakSelf handleNotifi:note];
-                                                          
-                                                      }];
-        
-    });
     return YES;
 }
 
-
-- (void)handleNotifi:(NSNotification *)notification {
-    
-    [self test:notification];
-}
-
-
-- (void)test:(NSNotification *)notification {
-    
-    NSLog(@" \n\n %@=======%@",notification.userInfo.description,[NSThread currentThread]);
-    
-    dispatch_async(taskQueue, ^{
-       
-        [array addObject:notification];
-        
-//        NSLog(@" \n\n %d=======%@",array.count,[NSThread currentThread]);
-
-    });
-    
-    dispatch_async(taskQueue, ^{
-        
-        if (array.count > 9) {
-            NSLog(@" \n\n 条件达到 %@=======%d",[NSThread currentThread],array.count);
-
-            [array removeAllObjects];
-        }
-        
-        
-    });
-
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

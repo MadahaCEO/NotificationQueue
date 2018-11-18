@@ -9,18 +9,18 @@
 #import "ViewController.h"
 #import "SecondViewController.h"
 #import "Notification.h"
+#import "DataHandle.h"
 
 
+/*
+ 设计模式参考LFLiveKit，所有的数据处理完成后，都回调到当前类，当前类充当了业务逻辑调度者的角色，不在个别类中引入部分有业务相关的类
+ */
 
-@interface ViewController ()<NotificationDelegate>
-{
-    
-    dispatch_queue_t  taskQueue;
-    
-}
+@interface ViewController ()<NotificationDelegate,DataHandleDelegate>
+
 
 @property (nonatomic, strong)    Notification *notifi;
-
+@property (nonatomic, strong)    DataHandle *dataHandle;
 
 @end
 
@@ -30,8 +30,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
-    taskQueue = dispatch_queue_create("com.no.test", DISPATCH_QUEUE_SERIAL);
     
     
     UIButton     *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -55,11 +53,19 @@
 
 
 
+#pragma mark - delegate
 
-- (void)pushData:(NSArray *)array {
+- (void)pushData:(NSArray *)array type:(int)type {
     
-    NSLog(@"\n 代理回调收到通知数据 %@ ------ %@ \n",array,[NSThread currentThread]);
+    NSLog(@"\n 代理回调收到 通知%d 数据 %lu个   ------ %@ \n",type,(unsigned long)array.count,[NSThread currentThread]);
     
+    [self.dataHandle simulateDataHandle:array type:type];
+}
+
+- (void)dataComplete:(NSArray *)array type:(int)type {
+    
+    NSLog(@"\n 代理回调收到 加工完成的%d 数据 %lu个   ------ %@ \n",type,(unsigned long)array.count,[NSThread currentThread]);
+
 }
 
 
@@ -73,6 +79,15 @@
         _notifi.delegate = self;
     }
     return _notifi;
+}
+
+- (DataHandle *)dataHandle {
+    
+    if (!_dataHandle) {
+        _dataHandle = [[DataHandle alloc] init];
+        _dataHandle.delegate = self;
+    }
+    return _dataHandle;
 }
 
 - (void)didReceiveMemoryWarning {
